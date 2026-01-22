@@ -1,195 +1,190 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>finance-landing</title>
-    <link rel="stylesheet" href="/finance-landing/css/style.css">
+    <title>Finance Landing</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <! логотип  навигация>
-    </header>
 
-    <main>
-        <section class="hero">
-           <div class="container">
-                <h1>Контролируй свои финансы</h1>
-                <p>Удобный сервис для учёта доходов и расходов</p>
-                <a href="#">Попробовать бесплатно</a>
+<header>
+    <div class="container">
+        <h2>FinanceTracker</h2>
+        <nav>
+            <a href="#features">Преимущества</a>
+            <a href="#pricing">Тарифы</a>
+            <a href="#contact">Контакты</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <h1>Контролируй свои финансы</h1>
+            <p class="hero-subtitle">Удобный сервис для учёта доходов и расходов на любом устройстве</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn-primary">Начать бесплатно</a>
+                <a href="#" class="btn-secondary">Попробовать демо</a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class = "stats">
-            <div class="container">
-                <div class="stats-list">
-                    <div class="stat-card animate-on-scroll">
-                        <span class="stat-value">+32%</span>
-                        <p class="stat-label">Экономия бюджета</p>
-                    </div>
+    <!-- STATS -->
+    <section class="stats">
+        <div class="container stats-list">
+            <div class="stat-card animate-on-scroll">
+                <span class="stat-value">+32%</span>
+                <p class="stat-label">Экономия бюджета</p>
+            </div>
+            <div class="stat-card animate-on-scroll">
+                <span class="stat-value">12 000+</span>
+                <p class="stat-label">Активных пользователей</p>
+            </div>
+            <div class="stat-card animate-on-scroll">
+                <span class="stat-value">99.9%</span>
+                <p class="stat-label">Надёжность хранения данных</p>
+            </div>
+        </div>
+    </section>
 
-                    <div class="stat-card animate-on-scroll">
-                        <span class="stat-value">12 000+</span>
-                        <p class="stat-label"> Активных проьзователей</p>
-                    </div>
-
-                    <div class="stat-card animate-on-scroll">
-                        <span class="stat-value">99.9%</span>
-                        <p class="stat-label">Надежность храннеия данных</p>
-                    </div>
+    <!-- FEATURES -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Почему это удобно</h2>
+            <div class="features-list">
+                <div class="feature-card animate-on-scroll">
+                    <h3>Простой учёт</h3>
+                    <p>Добавляйте доходы и расходы за несколько секунд</p>
                 </div>
-
-            </div>
-        </section>
-
-        <section class="features">
-             <div class="container">
-                <h2>Почему это удобно</h2>
-
-                <div class="features-list">
-                    <div class="feature-card animate-on-scroll">
-                        <h3>Простой учёт</h3>
-                        <p>Добавляйте доходы и расходы за несколько секунд</p>
-                    </div>
-
-                    <div class="feature-card animate-on-scroll">
-                        <h3>Наглядная статистика</h3>
-                        <p>Смотрите, куда уходят деньги, в графиках</p>
-                    </div>
-
-                    <div class="feature-card animate-on-scroll">
-                        <h3>Доступ с любого устройства</h3>
-                        <p>Работает на телефоне и компьютере</p>
-                    </div>
+                <div class="feature-card animate-on-scroll">
+                    <h3>Наглядная статистика</h3>
+                    <p>Смотрите, куда уходят деньги, в графиках</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <h3>Доступ с любого устройства</h3>
+                    <p>Работает на телефоне и компьютере</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-
-
-        <section class="functionality">
+    <!-- FUNCTIONALITY -->
+    <section class="functionality">
+        <div class="container">
             <div class="cards">
-                <div class="card highlight">
+                <div class="card animate-on-scroll">
                     <h3>Учёт доходов и расходов</h3>
                     <p>Добавляйте операции и следите за балансом</p>
                 </div>
-
-                <div class="card highlight">
+                <div class="card animate-on-scroll">
                     <h3>Категории</h3>
                     <p>Разделяйте траты по категориям</p>
                 </div>
-
-                <div class="card highlight">
+                <div class="card animate-on-scroll">
                     <h3>Графики и отчёты</h3>
                     <p>Визуализируйте доходы и расходы</p>
                 </div>
-
-                <div class="card highlight">
+                <div class="card animate-on-scroll">
                     <h3>Экспорт данных</h3>
                     <p>Сохраняйте отчёты в CSV и Excel</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="steps">
-            <div class="container">
-                <h2>Как это работает</h2>
+    <!-- STEPS -->
+    <section class="steps">
+        <div class="container">
+            <h2 class="section-title">Как это работает</h2>
+            <div class="step-card animate-on-scroll">
+                <h3>1. Регистрация</h3>
+                <p>Создайте аккаунт за пару секунд и получите доступ ко всем функциям сервиса.</p>
+            </div>
+            <div class="step-card animate-on-scroll">
+                <h3>2. Добавление операций</h3>
+                <p>Вводите доходы и расходы, присваивая категории и теги.</p>
+            </div>
+            <div class="step-card animate-on-scroll">
+                <h3>3. Анализ и графики</h3>
+                <p>Смотрите визуальные отчёты, диаграммы и сводки расходов.</p>
+            </div>
+            <div class="step-card animate-on-scroll">
+                <h3>4. Экспорт и отчёты</h3>
+                <p>Сохраняйте данные в CSV/Excel для анализа вне сервиса.</p>
+            </div>
+        </div>
+    </section>
 
-                <div>
-                    <h3>1.Регистрация</h3>
-                    <p>Создайте аккаунт за пару скунд и получите доступ ко всем функция сервира. </p>
+    <!-- PRICING -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Тарифы</h2>
+            <div class="pricing-cards">
+                <div class="plan-card animate-on-scroll">
+                    <h3>Бесплатный</h3>
+                    <p>Для начала</p>
+                    <ul>
+                        <li>Учёт доходов и расходов</li>
+                        <li>Категории</li>
+                        <li>Базовая статистика</li>
+                    </ul>
+                    <p><strong>0 ₽</strong></p>
+                    <button class="plan-button">Начать бесплатно</button>
                 </div>
-
-                <div>
-                    <h3>2. ДОбавление операций</h3>
-                    <p>Вводите доходы и расоды. присваивая категории и теги.</p>
-                </div>
-
-                <div>
-                    <h3>3.Анализ и графики</h3>
-                    <p>Смотрите визуальные отчёты, диаграммы и сводки расходов</p>
-                </div>
-
-                <div>
-                    <h3>4.Экспорт и отчёты</h3>
-                    <p> Сохраняйте данные в CSV/Excel для удобного анализа вне сервиса</p>
-
+                <div class="plan-card animate-on-scroll">
+                    <h3>Премиум</h3>
+                    <p>Для полного контроля</p>
+                    <ul>
+                        <li>Все функции бесплатного тарифа</li>
+                        <li>Графики и отчёты</li>
+                        <li>Экспорт данных</li>
+                    </ul>
+                    <p><strong>299 ₽ / месяц</strong></p>
+                    <button class="plan-button">Попробовать</button>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-       <section class="pricing">
-            <div class="container">
-                <h2>Тарифы</h2>
-
-                <div class="pricing-cards">
-                    <div class="plan-card">
-                        <h3>Бесплатный</h3>
-                        <p>Для начала</p>
-                        <ul>
-                            <li>Учёт доходов и расходов</li>
-                            <li>Категории</li>
-                            <li>Базовая статистика</li>
-                        </ul>
-                        <button class="plan-button">Начать бесплатно</button>
-                    </div>
-
-                    <div class="plan-card">
-                        <h3>Премиум</h3>
-                        <p>Для полного контроля</p>
-                        <ul>
-                            <li>Все функции бесплатного тарифа</li>
-                            <li>Графики и отчёты</li>
-                            <li>Экспорт данных</li>
-                        </ul>
-                        <button class="plan-button">Попробовать</button>
-                    </div>
-                </div>
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Часто задаваемые вопросы</h2>
+            <div class="faq-item animate-on-scroll">
+                <h3>Нужно ли вводить данные вручную?</h3>
+                <p>Да, все операции добавляются вручную для полного контроля расходов.</p>
             </div>
-        </section>
-
-
-
-        <section class="faq">
-            <div class="container">
-                <h2>Часто задаваемые вопросы</h2>
-
-                <div>
-                    <h3>Нужно ли вводить данные вручную?</h3>
-                    <p>Да, все операции добавляются вручную для полного контроля расходов.</p>
-                </div>
-
-                <div>
-                    <h3>Можно ли пользоваться сервисом бесплатно?</h3>
-                    <p>Да, у нас есть бесплатный тариф без ограничений по времени.</p>
-                </div>
-
-                <div>
-                    <h3>На каких устройствах работает сервис?</h3>
-                    <p>Сервис доступен на компьютере, планшете и смартфоне.</p>
-                </div>
+            <div class="faq-item animate-on-scroll">
+                <h3>Можно ли пользоваться сервисом бесплатно?</h3>
+                <p>Да, есть бесплатный тариф без ограничений по времени.</p>
             </div>
-        </section>
+            <div class="faq-item animate-on-scroll">
+                <h3>На каких устройствах работает сервис?</h3>
+                <p>Сервис доступен на компьютере, планшете и смартфоне.</p>
+            </div>
+        </div>
+    </section>
 
-       <section class="contact">
-           <div class="container">
-                <h2>Начните контролировать финансы уже сегодня</h2>
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Начните контролировать финансы уже сегодня</h2>
+            <form>
+                <input type="email" placeholder="Ваш email" required>
+                <button type="submit" class="btn-primary">Начать</button>
+            </form>
+        </div>
+    </section>
+</main>
 
-                <form>
-                    <input type="email" placeholder="Ваш email" required>
-                    <button type="submit">Начать</button>
-                </form>
-             </div>
-        </section>
-
-
-    </main>
-
-    <footer>
-        <! копирайт >
-    </footer>
-
+<footer>
+    <div class="container">
+        <p>&copy; 2026 FinanceTracker. Все права защищены.</p>
+    </div>
+</footer>
 
 <script src="js/main.js"></script>
 </body>
-
 </html>
