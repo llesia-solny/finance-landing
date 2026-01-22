@@ -21,7 +21,6 @@
     box-sizing: border-box;
 }
 
-/* ===== BASE ===== */
 body {
     font-family: Inter, Arial, sans-serif;
     line-height: 1.6;
@@ -44,13 +43,9 @@ h1, h2, h3 {
     font-weight: 600;
 }
 
-h1 {
-    font-size: 44px;
-}
-
-h2 {
-    font-size: 32px;
-}
+h1 { font-size: 44px; }
+h2 { font-size: 32px; }
+h3 { font-size: 20px; }
 
 p {
     margin-bottom: 12px;
@@ -62,206 +57,86 @@ a {
     color: inherit;
 }
 
+/* ===== HEADER ===== */
+header {
+    background: var(--bg-main);
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav a {
+    margin-left: 24px;
+    font-weight: 500;
+    color: var(--text-main);
+    transition: color 0.25s ease;
+}
+
+header nav a:hover { color: var(--accent); }
+
 /* ===== HERO ===== */
 .hero {
     background: linear-gradient(135deg, #0f172a, #020617);
     color: #ffffff;
     text-align: center;
+    padding: 140px 20px;
+    position: relative;
+    overflow: hidden;
 }
 
-.hero p {
+.hero-subtitle {
     color: #cbd5e1;
+    font-size: 20px;
+    margin-top: 16px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
 }
 
-.hero a {
+.hero-buttons {
+    margin-top: 32px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
     display: inline-block;
-    margin-top: 24px;
     padding: 14px 28px;
-    background-color: var(--accent);
-    color: #052e16;
-    border-radius: 6px;
+    border-radius: 8px;
     font-weight: 600;
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.hero a:hover {
+.btn-primary {
+    background-color: var(--accent);
+    color: #052e16;
+}
+
+.btn-primary:hover {
     background-color: var(--accent-dark);
     transform: translateY(-3px);
 }
 
-/* ===== SECTIONS BACKGROUND ===== */
-.features,
-.pricing {
-    background-color: var(--bg-main);
+.btn-secondary {
+    background-color: rgba(255,255,255,0.1);
+    color: #ffffff;
 }
 
-.functionality,
-.steps,
-.faq,
-.contact {
-    background-color: var(--bg-alt);
+.btn-secondary:hover {
+    background-color: rgba(255,255,255,0.2);
+    transform: translateY(-3px);
 }
 
-/* ===== CARDS SYSTEM ===== */
-.features-list,
-.cards {
-    display: flex;
-    gap: 24px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.card,
-.feature-card {
-    background: var(--card-bg);
-    padding: 24px;
-    border-radius: 12px;
-    border: 1px solid var(--border);
-    flex: 1 1 280px;
-    max-width: 320px;
-    transition: transform 0.25s ease, border-color 0.25s ease;
-}
-
-.card:hover,
-.feature-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--accent);
-}
-
-.card h3,
-.feature-card h3 {
-    margin-bottom: 12px;
-    transition: color 0.25s ease;
-}
-
-.card:hover h3,
-.feature-card:hover h3 {
-    color: var(--accent);
-}
-
-/* ===== PRICING (SaaS-карточки) ===== */
-.pricing {
-    background-color: var(--bg-main);
-    padding: 80px 20px;
-}
-
-.pricing h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 32px;
-    font-weight: 600;
-}
-
-.pricing-cards {
-    display: flex;
-    gap: 24px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.plan-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    flex: 1 1 280px;
-    max-width: 320px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* кнопка всегда внизу */
-    padding: 24px;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.plan-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--accent);
-}
-
-.plan-card h3 {
-    font-size: 20px;
-    margin-bottom: 8px;
-    color: var(--text-main);
-}
-
-.plan-card p {
-    color: var(--text-muted);
-    margin-bottom: 16px;
-}
-
-.plan-card ul {
-    list-style: none;
-    padding-left: 0;
-    margin-bottom: 24px;
-}
-
-.plan-card ul li {
-    margin-bottom: 8px;
-    padding-left: 24px; /* отступ для галочки */
-    position: relative;
-}
-
-.plan-card ul li::before {
-    content: '✔';
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-}
-
-.plan-button {
-    background-color: var(--accent);
-    color: #052e16;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.25s ease, transform 0.25s ease;
-}
-
-.plan-button:hover {
-    background-color: var(--accent-dark);
-    transform: translateY(-2px);
-}
-
-/* ===== ADAPTIVE ===== */
-@media (max-width: 768px) {
-    .pricing-cards {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-
-/* ===== STEPS & FAQ ===== */
-.steps div,
-.faq div {
-    background: var(--card-bg);
-    border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 16px;
-    border: 1px solid var(--border);
-}
-
-/* ===== CONTACT ===== */
-.contact form {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-.contact input {
-    padding: 12px;
-    border: 1px solid var(--border);
-    border-radius: 6px;
-}
-
-.contact button {
-    width: fit-content;
-}
-
-/* ===== STATS SECTION ===== */
+/* ===== STATS ===== */
 .stats {
     background: var(--bg-dark);
     color: #ffffff;
@@ -295,6 +170,144 @@ a {
     font-size: 15px;
 }
 
+/* ===== FEATURES & FUNCTIONALITY ===== */
+.features-list,
+.cards {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.feature-card,
+.card {
+    background: var(--card-bg);
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    flex: 1 1 280px;
+    max-width: 320px;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.feature-card:hover,
+.card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+}
+
+.feature-card h3,
+.card h3 {
+    margin-bottom: 12px;
+    transition: color 0.25s ease;
+}
+
+.feature-card:hover h3,
+.card:hover h3 {
+    color: var(--accent);
+}
+
+/* ===== STEPS & FAQ ===== */
+.step-card,
+.faq-item {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    border: 1px solid var(--border);
+}
+
+/* ===== PRICING ===== */
+.pricing-cards {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.plan-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    flex: 1 1 280px;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.plan-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+}
+
+.plan-card h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: var(--text-main);
+}
+
+.plan-card p {
+    color: var(--text-muted);
+    margin-bottom: 16px;
+}
+
+.plan-card ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 24px;
+}
+
+.plan-card ul li {
+    margin-bottom: 8px;
+    padding-left: 24px;
+    position: relative;
+}
+
+.plan-card ul li::before {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+.plan-button {
+    background-color: var(--accent);
+    color: #052e16;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.plan-button:hover {
+    background-color: var(--accent-dark);
+    transform: translateY(-2px);
+}
+
+/* ===== CONTACT ===== */
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.contact input {
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+}
+
+.contact button {
+    width: fit-content;
+}
+
 /* ===== SCROLL ANIMATION ===== */
 .animate-on-scroll {
     opacity: 0;
@@ -311,6 +324,7 @@ a {
 @media (max-width: 768px) {
     h1 { font-size: 36px; }
     h2 { font-size: 28px; }
+    h3 { font-size: 18px; }
 
     .features-list,
     .cards,
@@ -327,8 +341,20 @@ a {
         max-width: 90%;
     }
 
-    .contact form {
-        width: 100%;
-    }
+    .hero-subtitle { font-size: 18px; }
+    .hero-buttons { flex-direction: column; }
+    .btn-primary, .btn-secondary { width: 100%; text-align: center; }
+
+    .contact form { width: 100%; }
+}
+/* ===== Scroll animation ===== */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
+.animate-on-scroll.active {
+  opacity: 1;
+  transform: translateY(0);
+}
