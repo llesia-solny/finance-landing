@@ -1,15 +1,32 @@
+/* ===== DESIGN TOKENS ===== */
+:root {
+    --bg-main: #f8fafc;
+    --bg-alt: #f1f5f9;
+    --bg-dark: #0f172a;
 
-/* Основные глобальные стили */
+    --card-bg: #ffffff;
+    --border: #e5e7eb;
+
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+
+    --accent: #22c55e;
+    --accent-dark: #16a34a;
+}
+
+/* ===== RESET ===== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ===== BASE ===== */
 body {
-    font-family: Arial, sans-serif;
+    font-family: Inter, Arial, sans-serif;
     line-height: 1.6;
-    color: #222;
+    color: var(--text-main);
+    background: var(--bg-main);
 }
 
 .container {
@@ -19,16 +36,25 @@ body {
 }
 
 section {
-    padding: 80px 20px;
+    padding: 80px 0;
 }
 
 h1, h2, h3 {
     margin-bottom: 16px;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 44px;
+}
+
+h2 {
+    font-size: 32px;
 }
 
 p {
     margin-bottom: 12px;
-    color: #555;
+    color: var(--text-muted);
 }
 
 a {
@@ -36,117 +62,262 @@ a {
     color: inherit;
 }
 
-/* Hero */
+/* ===== HERO ===== */
 .hero {
+    background: linear-gradient(135deg, #0f172a, #020617);
+    color: #ffffff;
     text-align: center;
-    background-color: #f4f6f8;
+}
+
+.hero p {
+    color: #cbd5e1;
 }
 
 .hero a {
     display: inline-block;
-    margin-top: 20px;
-    padding: 12px 24px;
-    background-color: #2f80ed;
-    color: #fff;
+    margin-top: 24px;
+    padding: 14px 28px;
+    background-color: var(--accent);
+    color: #052e16;
     border-radius: 6px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: 600;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .hero a:hover {
-    background-color: #1c63c1;
+    background-color: var(--accent-dark);
     transform: translateY(-3px);
 }
 
-/* Features / Functionality Cards */
-.cards, .features-list {
+/* ===== SECTIONS BACKGROUND ===== */
+.features,
+.pricing {
+    background-color: var(--bg-main);
+}
+
+.functionality,
+.steps,
+.faq,
+.contact {
+    background-color: var(--bg-alt);
+}
+
+/* ===== CARDS SYSTEM ===== */
+.features-list,
+.cards {
     display: flex;
     gap: 24px;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.card, .feature-card {
-    background: #ffffff;
+.card,
+.feature-card {
+    background: var(--card-bg);
     padding: 24px;
-    border-radius: 16px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
     flex: 1 1 280px;
     max-width: 320px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.card:hover,
+.feature-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+}
+
+.card h3,
+.feature-card h3 {
+    margin-bottom: 12px;
+    transition: color 0.25s ease;
+}
+
+.card:hover h3,
+.feature-card:hover h3 {
+    color: var(--accent);
+}
+
+/* ===== PRICING CARDS ===== */
+.pricing-cards {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.plan-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    flex: 1 1 280px;
+    max-width: 320px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
 
-.card:hover, .feature-card:hover {
-    transform: translateY(-8px);
+.plan-card:hover {
+    transform: translateY(-6px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
-.card h3, .feature-card h3 {
+.plan-card h3 {
+    font-size: 22px;
     margin-bottom: 12px;
-    transition: color 0.3s ease;
+    color: var(--text-main);
 }
 
-.card:hover h3, .feature-card:hover h3 {
-    color: #2f80ed;
+.plan-card p {
+    color: var(--text-muted);
+    margin-bottom: 16px;
 }
 
-/* Section backgrounds */
-.features, .pricing {
-    background-color: #ffffff;
-}
-
-.functionality, .steps, .faq, .contact {
-    background-color: #f7f9fc;
-}
-
-/* Buttons */
-button {
-    background-color: #2f80ed;
-    color: #fff;
-    padding: 12px 24px;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-button:hover {
-    background-color: #1c63c1;
-    transform: translateY(-3px);
-}
-
-/* Lists */
-ul {
+.plan-features {
     list-style: none;
     padding-left: 0;
+    margin-bottom: 20px;
 }
 
-ul li {
+.plan-features li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 10px;
+    color: var(--text-muted);
+}
+
+.plan-features li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent);
+    font-size: 14px;
+}
+
+.plan-price {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.plan-button {
+    background-color: var(--accent);
+    color: #052e16;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 24px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.plan-button:hover {
+    background-color: var(--accent-dark);
+    transform: translateY(-2px);
+}
+
+/* ===== STEPS & FAQ ===== */
+.steps div,
+.faq div {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    border: 1px solid var(--border);
+}
+
+/* ===== CONTACT ===== */
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.contact input {
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+}
+
+.contact button {
+    width: fit-content;
+}
+
+/* ===== STATS SECTION ===== */
+.stats {
+    background: var(--bg-dark);
+    color: #ffffff;
+}
+
+.stats-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    flex: 1 1 220px;
+    padding: 32px 24px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+}
+
+.stat-value {
+    display: block;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--accent);
     margin-bottom: 8px;
 }
 
-/* Section Titles */
-.section-title {
-    text-align: center;
-    margin-bottom: 40px;
+.stat-label {
+    color: #cbd5e1;
+    font-size: 15px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .cards, .features-list {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-/* Состояние до появления */
+/* ===== SCROLL ANIMATION ===== */
 .animate-on-scroll {
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-/* Состояние после появления */
 .animate-on-scroll.active {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    h1 { font-size: 36px; }
+    h2 { font-size: 28px; }
+
+    .features-list,
+    .cards,
+    .pricing-cards,
+    .stats-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .plan-card,
+    .card,
+    .feature-card,
+    .stat-card {
+        max-width: 90%;
+    }
+
+    .contact form {
+        width: 100%;
+    }
+}
+
