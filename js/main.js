@@ -1,17 +1,16 @@
+const animatedItems = document.querySelectorAll('.animate-on-scroll');
 
-document.addEventListener('DOMContentLoaded', () => {
-    const elements = document.querySelectorAll('.animate-on-scroll');
+const showOnScroll = () => {
+  const triggerBottom = window.innerHeight * 0.9;
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.2
-    });
+  animatedItems.forEach(item => {
+    const itemTop = item.getBoundingClientRect().top;
 
-    elements.forEach(el => observer.observe(el));
-});
+    if (itemTop < triggerBottom) {
+      item.classList.add('active');
+    }
+  });
+};
+
+window.addEventListener('scroll', showOnScroll);
+window.addEventListener('load', showOnScroll);
