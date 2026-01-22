@@ -139,7 +139,19 @@ a {
     color: var(--accent);
 }
 
-/* ===== PRICING CARDS ===== */
+/* ===== PRICING (SaaS-карточки) ===== */
+.pricing {
+    background-color: var(--bg-main);
+    padding: 80px 20px;
+}
+
+.pricing h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 32px;
+    font-weight: 600;
+}
+
 .pricing-cards {
     display: flex;
     gap: 24px;
@@ -153,21 +165,21 @@ a {
     border-radius: 12px;
     flex: 1 1 280px;
     max-width: 320px;
-    padding: 24px;
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
+    justify-content: space-between; /* кнопка всегда внизу */
+    padding: 24px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .plan-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    transform: translateY(-4px);
+    border-color: var(--accent);
 }
 
 .plan-card h3 {
-    font-size: 22px;
-    margin-bottom: 12px;
+    font-size: 20px;
+    margin-bottom: 8px;
     color: var(--text-main);
 }
 
@@ -176,41 +188,31 @@ a {
     margin-bottom: 16px;
 }
 
-.plan-features {
+.plan-card ul {
     list-style: none;
     padding-left: 0;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 
-.plan-features li {
+.plan-card ul li {
+    margin-bottom: 8px;
+    padding-left: 24px; /* отступ для галочки */
     position: relative;
-    padding-left: 28px;
-    margin-bottom: 10px;
-    color: var(--text-muted);
 }
 
-.plan-features li::before {
-    content: "✔";
+.plan-card ul li::before {
+    content: '✔';
     position: absolute;
     left: 0;
-    top: 50%;
-    transform: translateY(-50%);
     color: var(--accent);
-    font-size: 14px;
-}
-
-.plan-price {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 16px;
 }
 
 .plan-button {
     background-color: var(--accent);
     color: #052e16;
+    padding: 12px 24px;
     border: none;
     border-radius: 6px;
-    padding: 12px 24px;
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.25s ease, transform 0.25s ease;
@@ -220,6 +222,15 @@ a {
     background-color: var(--accent-dark);
     transform: translateY(-2px);
 }
+
+/* ===== ADAPTIVE ===== */
+@media (max-width: 768px) {
+    .pricing-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 
 /* ===== STEPS & FAQ ===== */
 .steps div,
