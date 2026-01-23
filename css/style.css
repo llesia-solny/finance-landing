@@ -358,3 +358,83 @@ header nav a:hover { color: var(--accent); }
   opacity: 1;
   transform: translateY(0);
 }
+/* =========================
+   MOBILE ADAPTATION
+   ========================= */
+@media (max-width: 768px) {
+
+   body {
+        font-size: 16px;
+   }
+   section {
+        padding: 56pxc 0;
+   }
+
+   .container {
+        padding: 0 16px;
+   }
+
+   .hero {
+        padding: 100px 16px 80px;
+   }
+
+   h1 {
+        font-size: 32px;
+        line-height: 1.2;
+   }
+
+   .hero-subtitle {
+        font-size: 16px;
+   }
+
+   .hero-button {
+        flex-direction: column;
+        gap: 12px;
+   }
+
+   .btn-primary,
+   .btn-secondary {
+        width: 100%;
+        padding: 16px;
+        font-size 16px;
+   }
+
+   .features-list,
+   .card,
+   .pricing-card,
+   .stats-list {
+        flex-direction: column;
+        align-items: stretch;
+   }
+
+   .card,
+   .feature-card,
+   .plan-card,
+   .stat-card {
+        max-width: 100%;
+   }
+
+   .plan-card {
+        padding: 20px;
+   }
+
+   .plan-button {
+         width: 100%;
+   }
+
+   .stat-value {
+        font-size: 28px;
+   }
+
+   .contact form {
+        max-width: 100%;
+   }
+
+    .contact button {
+        width: 100%;
+    }
+
+
+
+
+}
