@@ -553,3 +553,48 @@ header nav a:hover { color: var(--accent); }
     margin-top: 24px;
   }
 }
+
+/* ===== BURGER ===== */
+.burger {
+    width: 32px;
+    height: 24px;
+    position: relative;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.burger span {
+    height: 3px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 2px;
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease,
+        background-color 0.3s ease;
+}
+
+/* ===== ACTIVE (крестик) ===== */
+.burger.active span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.burger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.active span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+    .burger {
+        display: flex;
+    }
+}
