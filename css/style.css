@@ -2,19 +2,18 @@
    DESIGN TOKENS
 ========================= */
 :root {
-  --bg-main: #f8fafc;
+  --bg-main: #fdfdfd;
   --bg-white: #ffffff;
-  --bg-dark: #0f172a;
-  --accent: #22c55e;
-  --accent-dark: #16a34a;
-  --accent-soft: rgba(34,197,94,0.25);
-  --text-main: #0f172a;
-  --text-muted: #64748b;
-  --text-light: #e5e7eb;
-  --border: #e2e8f0;
+  --bg-dark: #1f2937;
+  --accent: #b1e697;
+  --accent-dark: #22c55e;
+  --accent-soft: #013220;
+  --text-main: #111827;
+  --text-muted: #6b7280;
+  --text-light: #f3f4f6;
+  --border: #e5e7eb;
   --radius: 16px;
 }
-
 /* =========================
    RESET
 ========================= */
@@ -31,6 +30,7 @@ body {
   line-height: 1.6;
 }
 
+
 a { text-decoration: none; color: inherit; }
 
 .container {
@@ -41,6 +41,65 @@ a { text-decoration: none; color: inherit; }
 
 section { padding: 96px 0; }
 
+section {
+  position: relative;
+}
+
+.features,
+.pricing,
+.faq {
+  background: linear-gradient(
+    180deg,
+    #f8fafc,
+    #f1f5f9
+  );
+}
+
+.functionality,
+.steps,
+.contact {
+  background:
+    radial-gradient(circle at top right, #f1f5f9, transparent 40%),
+    #ffffff;
+}
+
+.functionality {
+  position: relative;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(34,197,94,0.08), transparent 40%),
+    radial-gradient(circle at 85% 80%, rgba(34,197,94,0.06), transparent 45%),
+    linear-gradient(180deg, #f1f5f9, #eef2f7);
+}
+
+.steps {
+  background: linear-gradient(
+    180deg,
+    #ffffff,
+    #f1f5f9
+  );
+}
+
+.step-card {
+  position: relative;
+  padding-left: 56px;
+}
+
+.step-card::before {
+  content: "";
+  position: absolute;
+  left: 24px;
+  top: 28px;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 6px rgba(34,197,94,0.2);
+}
+
+
+
+
+
 /* =========================
    HEADER
 ========================= */
@@ -48,7 +107,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: var(--bg-dark);
+  background: var(--bg-white);
 }
 
 .header-inner {
@@ -59,7 +118,7 @@ header {
   padding: 0 20px;
 }
 
-.logo { color: #fff; font-weight: 700; font-size: 18px; }
+.logo { color: #00000; font-weight: 700; font-size: 18px; }
 
 .nav {
   display: flex;
@@ -67,7 +126,7 @@ header {
 }
 
 .nav a {
-  color: var(--text-light);
+  color: var(--bg-dark);
   font-weight: 500;
   transition: color 0.25s ease;
 }
@@ -99,12 +158,12 @@ header {
 ========================= */
 .hero {
   text-align: center;
-  background: linear-gradient(135deg, #0f172a, #020617);
-  color: #fff;
+  background: linear-gradient(135deg, #dbdbdb, #f5f5f5);
+  color: #00000;
   padding: 140px 20px;
 }
 .hero h1 { font-size: 42px; }
-.hero-subtitle { max-width: 640px; margin:16px auto 32px; color:#cbd5e1; }
+.hero-subtitle { max-width: 640px; margin:16px auto 32px; color:#00000; }
 
 .hero-buttons {
   display: flex;
@@ -128,7 +187,7 @@ header {
 
 .btn-secondary {
   background: rgba(255,255,255,0.1);
-  color: #fff;
+  color: #00000;
   padding: 14px 28px;
   border-radius: 10px;
   font-weight: 600;
@@ -142,7 +201,7 @@ header {
    STATS (gradient + micro-move)
 ========================= */
 .stats {
-  background: var(--bg-dark);
+  background: #f8fafc;
   color: #fff;
   padding: 80px 0;
 }
@@ -152,7 +211,7 @@ header {
   gap: 24px;
 }
 .stat-card {
-  background: var(--bg-dark);
+  background: #f5f5f5;
   border-radius: var(--radius);
   padding: 32px 24px;
   text-align: center;
@@ -163,13 +222,13 @@ header {
 .stat-value {
   font-size: 36px;
   font-weight: 700;
-  background: linear-gradient(45deg, #22c55e, #16a34a);
+  background: linear-gradient(45deg, #b1e697, #16a34a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: pulse 2s infinite alternate;
   margin-bottom: 8px;
 }
-.stat-label { color:#cbd5e1; font-size:16px; }
+.stat-label { color:#000000; font-size:16px; }
 
 @keyframes pulse {
   0% { transform: translateY(0); }
@@ -197,6 +256,130 @@ header {
   box-shadow:0 0 0 1px rgba(34,197,94,0.2),0 12px 40px rgba(34,197,94,0.35);
 }
 
+/* ===== VALUE CARDS (Почему это удобно) ===== */
+/* =========================
+   FEATURES — FIX
+========================= */
+
+.features-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+/* КАРТОЧКА */
+.feature-card {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column; /* картинка сверху, текст снизу */
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* КАРТИНКА */
+.feature-image {
+  height: 300px;
+  overflow: hidden;
+}
+
+.feature-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+/* ТЕКСТ */
+.feature-text {
+  padding: 24px;
+}
+
+.feature-text h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #0f172a;
+}
+
+.feature-text p {
+  font-size: 15px;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* Ховер эффект */
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(34, 197, 94, 0.25);
+}
+
+.feature-card:hover .feature-image img {
+  transform: scale(1.05);
+}
+
+/* ANIMATE ON SCROLL */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.6s ease;
+}
+
+.animate-on-scroll.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* МОБИЛКА */
+@media (max-width: 768px) {
+  .feature-image {
+    height: 160px;
+  }
+}
+
+/* ===== PRODUCT CARDS (Функционал) ===== */
+.functionality .card {
+  background: #ffffff;
+  border: 1px dashed var(--border);
+  box-shadow: none;
+  position: relative;
+  padding-left: 28px;
+}
+
+/* боковой индикатор */
+.functionality .card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 16px;
+  bottom: 16px;
+  width: 4px;
+  background: var(--accent);
+  border-radius: 4px;
+  opacity: 0.6;
+}
+
+/* заголовок спокойнее */
+.functionality .card h3 {
+  font-size: 18px;
+}
+
+/* hover без «прыжков» */
+.functionality .card:hover {
+  transform: none;
+  border-color: var(--accent);
+  box-shadow: 0 8px 24px rgba(15,23,42,0.08);
+}
+
+@media (max-width: 768px) {
+  .features .feature-card:hover,
+  .functionality .card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
 /* =========================
    PRICING
 ========================= */
@@ -219,6 +402,7 @@ header {
   transition: transform 0.35s ease, box-shadow 0.35s ease;
   text-align: center;
 }
+
 .plan-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 0 0 1px rgba(34,197,94,0.2),0 12px 40px rgba(34,197,94,0.35);
@@ -227,7 +411,16 @@ header {
 .plan-card p { color: var(--text-muted); margin-bottom: 16px; }
 .plan-card ul { list-style:none; padding:0; margin:24px 0; }
 .plan-card li::before { content:"✔"; color: var(--accent); margin-right:8px; }
-.plan-button { background: var(--accent); color: #052e16; padding:12px; border:none; border-radius:10px; font-weight:600; width:100%; cursor:pointer; }
+
+.plan-button {
+    background: var(--accent);
+    color: #052e16; padding:12px;
+    border:none;
+    border-radius:10px;
+    font-weight:600;
+    width:100%;
+    cursor:pointer;
+    margin-top: auto;}
 
 /* =========================
    FAQ
@@ -275,3 +468,164 @@ header {
   .feature-card:active, .card:active, .plan-card:active, .stat-card:active { transform:scale(0.97); box-shadow:0 0 20px var(--accent-soft); }
   .plan-card { width:90%; }
 }
+
+/* =========================
+   CONTACT
+========================= */
+.contact {
+  background: linear-gradient(135deg, #f1f5f9, #f8fafc);
+  color: #00000;
+}
+
+.contact .container {
+  max-width: 680px;
+  text-align: center;
+}
+
+.contact .section-title {
+  color: #00000;
+  margin-bottom: 32px;
+}
+
+/* ==== FORM CARD ==== */
+.contact-form {
+  background: #00000;
+  border: #00000;
+  border-radius: var(--radius);
+  padding: 32px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  backdrop-filter: blur(10px);
+}
+
+/* ==== EMAIL INPUT ==== */
+.contact-form input {
+  flex: 1;
+  padding: 16px 18px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: #00000;
+  background: #00000;
+  color: #00000;
+  outline: none;
+  transition: border 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.contact-form input::placeholder {
+  color: #00000;
+}
+
+.contact-form input:focus {
+  border-color: var(--accent);
+  background: #00000;
+  box-shadow: 0 0 0 4px rgba(34,197,94,0.25);
+}
+
+/* ==== BUTTON ==== */
+.contact-form .btn-primary {
+  padding: 16px 28px;
+  white-space: nowrap;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 640px) {
+  .contact-form {
+    flex-direction: column;
+    padding: 24px;
+  }
+
+  .contact-form input,
+  .contact-form .btn-primary {
+    width: 100%;
+  }
+}
+
+.input-wrapper {
+  position: relative;
+  flex: 1;
+}
+
+.input-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #00000;
+  font-weight: 600;
+  pointer-events: none;
+}
+
+.contact-form input {
+  padding-left: 44px;
+}
+
+.btn-loader {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(0,0,0,0.2);
+  border-top-color: #052e16;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  display: none;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+button.loading .btn-text {
+  display: none;
+}
+
+button.loading .btn-loader {
+  display: block;
+}
+
+.contact-success {
+  display: none;
+  margin-top: 32px;
+  text-align: center;
+  background: rgba(34,197,94,0.1);
+  border: 1px solid rgba(34,197,94,0.35);
+  border-radius: var(--radius);
+  padding: 32px;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.success-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #052e16;
+  font-size: 28px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-success h3 {
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.contact-success p {
+  color: #cbd5e1;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
