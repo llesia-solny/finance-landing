@@ -31,3 +31,21 @@ mobileMenu.querySelectorAll('a').forEach(link => {
     mobileMenu.classList.remove('active');
   });
 });
+
+const contactForm = document.getElementById('contactForm');
+const contactSuccess = document.getElementById('contactSuccess');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const button = contactForm.querySelector('button');
+    button.classList.add('loading');
+
+    // имитация отправки
+    setTimeout(() => {
+      contactForm.style.display = 'none';
+      contactSuccess.style.display = 'block';
+    }, 1500);
+  });
+}
