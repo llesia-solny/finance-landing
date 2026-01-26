@@ -62,28 +62,47 @@
 
     <!-- FEATURES -->
     <section class="features" id="features">
-        <div class="container">
-            <h2 class="section-title animate-on-scroll">Почему это удобно</h2>
-            <div class="features-list">
-                <div class="feature-card animate-on-scroll">
+    <div class="container">
+        <h2 class="section-title animate-on-scroll">Почему это удобно</h2>
+        <div class="features-list">
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-image">
+                    <img src="img/analytics.jpg" alt="Аналитика">
+                </div>
+                <div class="feature-text">
                     <h3>Простой учёт</h3>
                     <p>Добавляйте доходы и расходы за несколько секунд</p>
                 </div>
-                <div class="feature-card animate-on-scroll">
+            </div>
+
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-image">
+                    <img src="img/statistics.png" alt="Статистика">
+                </div>
+                <div class="feature-text">
                     <h3>Наглядная статистика</h3>
                     <p>Смотрите, куда уходят деньги, в графиках</p>
                 </div>
-                <div class="feature-card animate-on-scroll">
+            </div>
+
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-image">
+                    <img src="img/device.jpg" alt="Устройство">
+                </div>
+                <div class="feature-text">
                     <h3>Доступ с любого устройства</h3>
                     <p>Работает на телефоне и компьютере</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- FUNCTIONALITY -->
     <section class="functionality">
         <div class="container">
+            <h2 class="section-title animate-on-scroll">Функционал</h2>
             <div class="cards">
                 <div class="card animate-on-scroll">
                     <h3>Учёт доходов и расходов</h3>
@@ -182,10 +201,23 @@
     <section class="contact" id="contact">
         <div class="container">
             <h2 class="section-title">Начните контролировать финансы уже сегодня</h2>
-            <form>
-                <input type="email" placeholder="Ваш email" required>
-                <button type="submit" class="btn-primary">Начать</button>
+           <form class="contact-form" id="contactForm">
+              <div class="input-wrapper">
+                <span class="input-icon">✉</span>
+                <input type="email" placeholder="Введите email" required>
+              </div>
+
+              <button type="submit" class="btn-primary">
+                <span class="btn-text">Начать</span>
+                <span class="btn-loader"></span>
+              </button>
             </form>
+
+            <div class="contact-success" id="contactSuccess">
+              <div class="success-icon">✓</div>
+              <h3>Готово!</h3>
+              <p>Мы отправили вам письмо. Проверьте почту 💌</p>
+            </div>
         </div>
     </section>
 </main>
