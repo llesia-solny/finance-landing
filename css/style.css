@@ -629,3 +629,15 @@ button.loading .btn-loader {
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+#pricing {
+  scroll-margin-top: 80px;
+}
+
+#contact {
+    scroll-margin-top: 80px;
+}
+
